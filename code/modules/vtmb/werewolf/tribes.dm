@@ -166,24 +166,33 @@
 
 /datum/action/gift/digital_feelings/Trigger()
 	. = ..()
-	if(allowed_to_proceed)
-		owner.visible_message(span_danger("[owner.name] crackles with static electricity!"), span_danger("You crackle with static electricity, charging up your Gift!"))
-		if(do_after(owner, 3 SECONDS))
-			playsound(owner, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
-			if(CheckZoneMasquerade(owner))
-				var/mob/living/carbon/human/H
-				var/mob/living/carbon/werewolf/W
-				if(ishuman(owner))
-					H = owner
-				else
-					W = owner
-				if(H)
-					H.adjust_veil(-1)
-				if(W)
-					W.adjust_veil(-1)
-			for(var/mob/living/L in orange(6, owner))
-				if(L)
-					L.electrocute_act(30, owner, siemens_coeff = 1, flags = NONE)
+	if(!allowed_to_proceed)
+		return
+	owner.visible_message(span_danger("[owner.name] crackles with static electricity!"), span_danger("You crackle with static electricity, charging up your Gift!"))
+	playsound(owner, 'sound/magic/lightningshock.ogg', 100, TRUE, extrarange = 5)
+	animate(owner, color = "#72ccf0", time = 5 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(shock_ranged), owner), 5 SECONDS)
+
+/datum/action/gift/digital_feelings/proc/shock_ranged(mob/living/carbon/werewolf/owner)
+	if(owner.body_position != STANDING_UP)
+		animate(owner, color = "#FFFFFF", time = 0.5)
+		owner.visible_message(span_danger("[owner.name] fizzles out!"), span_danger("Your Gift fizzles out!"))
+		return
+	if(CheckZoneMasquerade(owner))
+		var/mob/living/carbon/human/H
+		var/mob/living/carbon/werewolf/W
+		if(ishuman(owner))
+			H = owner
+		else
+			W = owner
+		if(H)
+			H.adjust_veil(-1)
+		if(W)
+			W.adjust_veil(-1)
+	for(var/mob/living/L in orange(6, owner))
+		if(L)
+			L.electrocute_act(30, owner, siemens_coeff = 1, flags = NONE)
+	animate(owner, color = "#FFFFFF", time = 0.5)
 
 /datum/action/gift/hands_full_of_thunder
 	name = "Hands Full of Thunder"
