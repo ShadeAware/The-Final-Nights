@@ -4135,13 +4135,11 @@
 	alpha = 155;
 	density = 0;
 	dir = 4;
-	pixel_y = 11;
-	max_integrity = 2000
+	pixel_y = 11
 	},
 /obj/structure/vampfence/rich{
 	pixel_y = 12;
-	pixel_x = 15;
-	max_integrity = 2000
+	pixel_x = 15
 	},
 /obj/machinery/button/crematorium{
 	id = 87;
@@ -4696,6 +4694,7 @@
 /obj/item/restraints/handcuffs,
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/clothing/under/vampire/guard,
+/obj/item/vamp/keys/clinic,
 /turf/open/floor/plating/toilet,
 /area/vtm/clinic)
 "bhk" = (
@@ -27592,7 +27591,7 @@
 /obj/structure/reagent_dispensers/cooking_oil{
 	name = "strange vat";
 	desc = "A large metal drum lined with numerous biohazardous warnings.";
-	reagent_id = /datum/reagent/toxin/spewium
+	reagent_id = /datum/reagent/toxin/acid/fluacid
 	},
 /turf/open/floor/plating/rust,
 /area/vtm/clinic/haven)
@@ -31685,18 +31684,14 @@
 /turf/open/floor/plating/sidewalk,
 /area/vtm/chinatown)
 "ifQ" = (
-/obj/machinery/computer/arcade/battle{
+/obj/structure/fluff/hedge{
+	density = 0;
+	icon = 'icons/obj/computer.dmi';
+	icon_state = "arcade";
 	dir = 4;
-	desc = "An aging arcade cabinent that doesn't seem to work anymore. Who knows how it ended up here.";
-	enemy_hp = 100000;
-	enemy_mp = 400000;
-	enemy_name = "YYENXKXUG";
-	player_hp = 1;
-	player_mp = 1;
-	req_access = "captain";
-	req_access_txt = "ERR 505";
-	color = "#4d3223";
-	name = "broken arcade machine"
+	color = "#917357";
+	name = "broken arcade machine";
+	desc = "An old, battered arcade machine. The screen is shattered, and the buttons are missing."
 	},
 /turf/open/floor/plating/parquetry/old,
 /area/vtm/clinic/haven)
@@ -37380,8 +37375,7 @@
 	},
 /obj/structure/vampfence/rich{
 	pixel_y = 1;
-	pixel_x = -17;
-	max_integrity = 2000
+	pixel_x = -17
 	},
 /turf/open/floor/plating/rough,
 /area/vtm/clinic/haven)
@@ -38208,6 +38202,7 @@
 /obj/item/restraints/handcuffs,
 /obj/item/clothing/accessory/armband/medblue,
 /obj/item/clothing/under/vampire/guard,
+/obj/item/vamp/keys/clinic,
 /turf/open/floor/plating/toilet,
 /area/vtm/clinic)
 "jRQ" = (
@@ -322483,7 +322478,7 @@ iBj
 kdO
 bUt
 bUt
-ntq
+lmH
 ntq
 ntq
 ntq
@@ -324539,7 +324534,7 @@ ugE
 pDY
 bUt
 bUt
-ntq
+wpx
 ntq
 ntq
 ntq
