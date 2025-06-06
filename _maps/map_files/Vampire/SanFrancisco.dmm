@@ -14898,6 +14898,11 @@
 /obj/structure/closet/cardboard,
 /turf/open/floor/plating/rough/cave,
 /area/vtm/sewer)
+"dMo" = (
+/obj/effect/decal/wallpaper/blue,
+/obj/structure/sign/painting/library,
+/turf/closed/wall/vampwall/painted,
+/area/vtm/clinic)
 "dMu" = (
 /obj/structure/lattice/catwalk{
 	pixel_x = 1
@@ -17750,9 +17755,6 @@
 /turf/open/floor/carpet,
 /area/vtm/pacificheights/forest)
 "eBp" = (
-/obj/effect/decal/stock{
-	dir = 8
-	},
 /obj/machinery/shower{
 	dir = 4;
 	name = "safety shower"
@@ -17760,6 +17762,16 @@
 /obj/structure/sign/warning{
 	pixel_y = 0;
 	pixel_x = -32
+	},
+/obj/effect/decal/stock{
+	dir = 4;
+	pixel_y = 0;
+	pixel_x = -16
+	},
+/obj/effect/decal/stock{
+	dir = 8;
+	pixel_y = -1;
+	pixel_x = 15
 	},
 /turf/open/floor/noslip,
 /area/vtm/clinic)
@@ -27636,6 +27648,9 @@
 /obj/structure/chair/sofa/corp/corner{
 	dir = 4
 	},
+/obj/american_flag{
+	pixel_y = 32
+	},
 /turf/open/floor/plating/parquetry,
 /area/vtm/clinic)
 "gYJ" = (
@@ -34143,6 +34158,15 @@
 /obj/structure/lamppost/sidewalk,
 /turf/open/floor/plating/vampdirt,
 /area/vtm/graveyard)
+"iNE" = (
+/obj/effect/decal/bordur,
+/obj/structure/sign/departments/medbay/alt{
+	pixel_y = 32;
+	name = "\improper Clinic sign";
+	desc = "The international symbol of medical assistance. You can probably get help here."
+	},
+/turf/open/floor/plating/sidewalk/rich,
+/area/vtm/unionsquare)
 "iNG" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/carpet/red,
@@ -37477,6 +37501,12 @@
 	},
 /turf/open/floor/plating/vampcarpet,
 /area/vtm/cabaret)
+"jEI" = (
+/obj/structure/sign/warning/biohazard{
+	pixel_y = 32
+	},
+/turf/open/floor/plating/vampplating/mono,
+/area/vtm/clinic/haven)
 "jEJ" = (
 /turf/closed/wall/vampwall/rock,
 /area/vtm/forest)
@@ -68172,7 +68202,10 @@
 /turf/open/floor/plating/toilet,
 /area/vtm/sewer/tzimisce_sanctum)
 "rre" = (
-/obj/machinery/mineral/equipment_vendor/fastfood/sodavendor,
+/obj/machinery/mineral/equipment_vendor/fastfood/sodavendor{
+	density = 0;
+	pixel_y = 25
+	},
 /turf/open/floor/plating/vampplating/mono,
 /area/vtm/clinic/haven)
 "rrf" = (
@@ -93823,7 +93856,8 @@
 /area/vtm/supply)
 "xXC" = (
 /obj/machinery/mineral/equipment_vendor/fastfood/snacks{
-	pixel_x = -3
+	density = 0;
+	pixel_y = 25
 	},
 /turf/open/floor/plating/vampplating/mono,
 /area/vtm/clinic/haven)
@@ -121641,7 +121675,7 @@ gZZ
 aZY
 hjj
 uCb
-bTU
+jEI
 bTU
 uCb
 bTU
@@ -190265,7 +190299,7 @@ jcx
 mPC
 olO
 rOK
-kCX
+dMo
 nse
 vWr
 vWr
@@ -190509,7 +190543,7 @@ bUt
 bUt
 bUt
 bUt
-kCX
+dMo
 kYl
 lFu
 lFu
@@ -192328,7 +192362,7 @@ wvw
 bUt
 idz
 gkO
-oIb
+iNE
 hUg
 fQP
 bVK
@@ -193356,7 +193390,7 @@ uKu
 bUt
 wsy
 gkO
-oIb
+iNE
 fQP
 fQP
 bVK
@@ -194367,7 +194401,7 @@ oLg
 tfV
 vvM
 vvM
-kCX
+dMo
 qay
 vCj
 vCj
