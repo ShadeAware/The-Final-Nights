@@ -22716,7 +22716,7 @@
 /turf/open/floor/plating/sidewalkalt,
 /area/vtm/pacificheights/old)
 "fjF" = (
-/obj/vampire_car/police,
+/obj/vampire_car/emergency/police,
 /turf/open/floor/plating/asphalt,
 /area/vtm/ghetto)
 "fjH" = (
@@ -26017,7 +26017,7 @@
 	fire_controled = 1
 	})
 "fUZ" = (
-/obj/vampire_car/track/ambulance{
+/obj/vampire_car/emergency/ambulance{
 	dir = 4
 	},
 /turf/open/floor/plating/asphalt,
@@ -28255,7 +28255,7 @@
 /area/vtm/interior/tzimisce_manor)
 "gvv" = (
 /obj/effect/decal/bordur,
-/obj/vampire_car/police,
+/obj/vampire_car/emergency/police,
 /turf/open/floor/plating/sidewalk/poor,
 /area/vtm/ghetto)
 "gvA" = (
@@ -47821,7 +47821,7 @@
 /turf/open/floor/plating/rough/cave,
 /area/vtm/interior)
 "ldy" = (
-/obj/vampire_car/police/unmarked,
+/obj/vampire_car/emergency/police/unmarked,
 /turf/open/floor/plating/asphalt,
 /area/vtm/interior/police)
 "ldz" = (
@@ -49286,7 +49286,7 @@
 /turf/open/floor/carpet/red,
 /area/vtm/clinic)
 "lxf" = (
-/obj/vampire_car/police,
+/obj/vampire_car/emergency/police,
 /turf/open/floor/plating/asphalt,
 /area/vtm/interior/police)
 "lxi" = (
@@ -78305,7 +78305,7 @@
 /area/vtm/interior/millennium_tower/f4)
 "rTw" = (
 /obj/effect/decal/bordur,
-/obj/vampire_car/police,
+/obj/vampire_car/emergency/police,
 /turf/open/floor/plating/sidewalk/poor,
 /area/vtm/pacificheights)
 "rTz" = (
@@ -105048,7 +105048,7 @@
 /area/vtm/clinic/haven)
 "yeE" = (
 /obj/effect/decal/cleanable/oil,
-/obj/vampire_car/police,
+/obj/vampire_car/emergency/police,
 /turf/open/floor/plating/asphalt,
 /area/vtm/interior/police)
 "yeI" = (
@@ -220355,7 +220355,7 @@ yhf
 yhf
 oao
 qTP
-lxf
+bJU
 siX
 lxf
 siX
