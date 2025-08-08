@@ -1,10 +1,6 @@
 
-/datum/vampireclane/human_numina/true_faith
-	name = "Faithful"
-	desc = "Those devot few who have been touched in body and soul by the light of the LORD our God. Their hearts are pure, and their fury righteous."
-	clane_disciplines = list()
-	restricted_disciplines = list()
-	common_disciplines = list()
-	curse = "None."
-	accessories = list()
-	accessories_layers = list()
+/datum/vampire_clan/numina/true_faith
+	name = NUMINA_FAITH
+	desc = "Those devot few who have been touched in body and soul by the light of the LORD. Their religious devotion manifests itself in supernatural abilities and blessings, capable of striking down that which exists outside of God's plan."
+	curse = "Knowledge."
+	vampiric = FALSE

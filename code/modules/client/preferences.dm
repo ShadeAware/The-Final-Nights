@@ -782,7 +782,44 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 						if (possible_new_valerens.len && (player_experience >= 10))
 							dat += "<a href='byond://?_src_=prefs;preference=newvaleren;task=input'>Learn a new Valeren Path (10)</a><BR>"
+			if(pref_species.name == "Human")
+				dat += "<h2>[make_font_cool("Gifts")]</h2>"
+				dat += "<b>Numina:</b> <a href='byond://?_src_=prefs;preference=clan;task=input'>[clan.name]</a><BR>"
+				dat += "<b>Description:</b> [clan.desc]<BR>"
+				dat += "<b>Curse:</b> [clan.curse]<BR>"
 
+				for (var/i in 1 to discipline_types.len)
+					var/discipline_type = discipline_types[i]
+					var/datum/discipline/discipline = new discipline_type
+					var/discipline_level = discipline_levels[i]
+
+					var/cost
+					if (discipline_level <= 0)
+						cost = 10
+					else if (clan.name == CLAN_NONE)
+						cost = discipline_level * 6
+					else if (clan.clan_disciplines.Find(discipline_type))
+						cost = discipline_level * 5
+					else
+						cost = discipline_level * 7
+
+					dat += "<b>[discipline.name]</b>: [discipline_level > 0 ? "•" : "o"][discipline_level > 1 ? "•" : "o"][discipline_level > 2 ? "•" : "o"][discipline_level > 3 ? "•" : "o"][discipline_level > 4 ? "•" : "o"]([discipline_level])"
+					if((player_experience >= cost) && (discipline_level != 5))
+						dat += "<a href='byond://?_src_=prefs;preference=discipline;task=input;upgradediscipline=[i]'>Learn ([cost])</a><BR>"
+					else
+						dat += "<BR>"
+					dat += "-[discipline.desc]<BR>"
+					qdel(discipline)
+
+				if (clan.name == NUMINA_BASE)
+					var/list/possible_new_disciplines = subtypesof(/datum/discipline) - discipline_types - /datum/discipline/bloodheal
+					for (var/discipline_type in possible_new_disciplines)
+						var/datum/discipline/discipline = new discipline_type
+						if (discipline.clan_restricted)
+							possible_new_disciplines -= discipline_type
+						qdel(discipline)
+					if (possible_new_disciplines.len && (player_experience >= 10))
+						dat += "<a href='byond://?_src_=prefs;preference=newdiscipline;task=input'>Learn a new Discipline (10)</a><BR>"
 
 			if(pref_species.name == "Ghoul")
 				for (var/i in 1 to discipline_types.len)
@@ -2624,6 +2661,28 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							clan_accessory = null
 						else
 							clan_accessory = pick(clan.accessories)
+
+				if("Numina")
+					if(slotlocked || !(pref_species.id == "human"))
+						return
+
+					if(tgui_alert(user, "Are you sure you want to change your Numina? This will reset your Powers.", "Confirmation", list("Yes", "No")) != "Yes")
+						return
+
+					// Create a list of numina that can be played
+					var/list/available_clans = list()
+					for(var/adding_clan in GLOB.numina_clans)
+						var/datum/vampire_clan/numina/checking_clan = GLOB.numina_clans[adding_clan]
+						if(checking_clan.whitelisted && !SSwhitelists.is_whitelisted(user.ckey, checking_clan.name))
+							continue
+						available_clans += checking_clan
+					var/result = tgui_input_list(user, "Select your Path", "Magic Selection", sort_list(available_clans))
+					if(!result)
+						return
+					clan = result
+
+					discipline_types = list()
+					discipline_levels = list()
 
 				if("derangement")
 

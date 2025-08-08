@@ -46,6 +46,9 @@
 	/// If this Clan needs a whitelist to select and play
 	var/whitelisted
 
+	///Whether or not this Clan applies to something OTHER THAN a Kindred. Used in Numina.
+	var/vampiric = TRUE
+
 /**
  * Applies Clan-specific effects to the mob
  * gaining this Clan. Will alter the mob's
@@ -82,8 +85,9 @@
 		ADD_TRAIT(vampire, trait, CLAN_TRAIT)
 
 	//this needs to be adjusted to be more accurate for blood spending rates
-	var/datum/discipline/bloodheal/giving_bloodheal = new(clamp(11 - vampire.generation, 1, 10))
-	vampire.give_discipline(giving_bloodheal)
+	if (vampiric)
+		var/datum/discipline/bloodheal/giving_bloodheal = new(clamp(11 - vampire.generation, 1, 10))
+		vampire.give_discipline(giving_bloodheal)
 
 	// Applies on_join_round effects when a client logs into this mob
 	if (joining_round)
